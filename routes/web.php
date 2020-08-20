@@ -26,3 +26,13 @@ Route::post('/reset_passwd','MemberController@reset_passwd');
 Route::post('/auth_login', 'MemberController@auth_login');
 //成功登录路由
 Route::get('/menu','MenuController@display_menu');
+//删除书签
+Route::post('/delete_bms','MenuController@delete_bms');
+//添加书签表格
+Route::get('/add_bm_form','MenuController@add_bm_form');
+//添加书签
+Route::any('/add_bms','MenuController@add_bms');
+//注销
+Route::get('/logout','MenuController@logout');
+//更改密码
+Route::any('/change_passwd_form','MenuController@change_passwd_form');
