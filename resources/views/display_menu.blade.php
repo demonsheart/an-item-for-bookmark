@@ -13,6 +13,6 @@
     }
 ?>
 <a href="/change_passwd_form">Change password</a><br>
-<a href="recommend.php">Recommend URLs to me</a> &nbsp;|&nbsp;
+<a href="/recommend">Recommend URLs to me</a> &nbsp;|&nbsp;
 <a href="/logout">Logout</a>
 <hr>

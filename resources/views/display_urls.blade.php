@@ -3,7 +3,7 @@ global $bm_table;
 $bm_table = true;
 ?>
 <br>
-<form name="bm_table" action="./delete_bms" method="post">
+<form name="bm_table" action="/delete_bms" method="post">
     <table width="300" cellpadding="2" cellspacing="0">
         <?php
             $color = "#cccccc";
@@ -32,5 +32,6 @@ $bm_table = true;
                 echo "<tr><td>No bookmarks on record</td></tr>";
             }
             ?>
+            {{ csrf_field() }}
     </table>
 </form>
