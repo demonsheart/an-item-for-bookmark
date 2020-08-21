@@ -12,7 +12,6 @@
 */
 
 //登录界面
-
 Route::get('/', 'OutPutController@login');
 //注册界面
 Route::get('/register', 'OutPutController@register');
