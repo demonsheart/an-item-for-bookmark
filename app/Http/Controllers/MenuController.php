@@ -6,6 +6,7 @@ use App\Bookmark;
 use App\Rules\AuthURL;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
@@ -150,14 +151,16 @@ class MenuController extends Controller
 
             $old_pass = $request['old_passwd'];
 
-            $new_pass = sha1($request['new_passwd']); //散列值
+            $new_pass = Crypt::encrypt($request['new_passwd']); //散列值
 
             //密码检验
             $model = new User();
 
-            $result = $model->where('username', $username)->where('passwd', sha1($old_pass))->count();
+            $result = $model::where('username', $username)->value('passwd');
 
-            if ($result != 0) //密码正确
+            $result = Crypt::decrypt($result);
+
+            if ($result == $old_pass) //密码正确
             {
                 $model->where('username', $username)->update(['passwd' => $new_pass]);
 

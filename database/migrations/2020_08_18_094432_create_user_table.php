@@ -16,7 +16,7 @@ class CreateUserTable extends Migration
         Schema::create('user', function (Blueprint $table) {
             $table->string('username',16);
             $table->primary('username');
-            $table->char('passwd',40)->notNull();
+            $table->char('passwd',255)->notNull();
             $table->string('email',100)->notNull();
         });
     }

@@ -39,3 +39,5 @@ Route::get('/change_passwd_form', 'MenuController@change_passwd_form');
 Route::post('/change_passwd', 'MenuController@change_passwd');
 //推荐书签
 Route::any('/recommend', 'MenuController@recommend');
+//test
+// Route::any('/test', 'MemberController@test');

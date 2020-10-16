@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 
@@ -30,9 +31,26 @@ class MemberController extends Controller
 
             $model = new User(); //实例化模型
 
-            $result = $model::where('username', $username)->where('passwd', sha1($passwd))->get();
+            $flag = 0;
 
-            if (!$result || $result->count() == 0) //如果返回出错或者无返回记录
+            $num = $model::where('username', $username)->get()->count();
+
+            if ($num == 1) {
+                $result = $model::where('username', $username)->value('passwd');
+
+                $result = Crypt::decrypt($result);
+
+                if ($result == $passwd) {
+                    //至此 验证成功 添加session变量
+                    Session::put('valid_user', $username);
+                    $flag = 1;
+
+                    //进入菜单界面
+                    return redirect('/menu');
+                }
+            }
+
+            if ($flag == 0) //如果返回出错或者无返回记录
             {
                 //保险
                 if (Session::has('valid_user')) {
@@ -43,14 +61,6 @@ class MemberController extends Controller
                 $title = 'Problem:';
 
                 return view('fail_login', compact('title'));
-
-            } else {
-
-                //至此 验证成功 添加session变量
-                Session::put('valid_user', $username);
-
-                //进入菜单界面
-                return redirect('/menu');
 
             }
         } else {
@@ -85,7 +95,7 @@ class MemberController extends Controller
 
             $username = $request['username'];
 
-            $passwd = sha1($request['passwd']); //散列
+            $passwd = Crypt::encrypt($request['passwd']); //散列
 
             //检验是否已注册
             $model = new User();
@@ -171,7 +181,7 @@ class MemberController extends Controller
 
             $word .= rand(0, 9999); //添加数字
 
-            $sec_word = sha1($word); //加密
+            $sec_word = Crypt::encrypt($word); //加密
 
             //连接数据库 重置密码
             $model = new User();
