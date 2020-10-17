@@ -1,4 +1,4 @@
-###程序使用说明
+### 程序使用说明
 >1.	项目打包
 >2.	安装composer之后在项目根目录下使用composer install命令安装vendor目录
 >3.	Database目录下必须有factories、migrations、seeds目录
@@ -8,5 +8,5 @@
 >7.	本项目的缺陷在于mail函数不能真正的发送邮件（可能与防火墙、配置、协议问题暂时无法解决），可在如下目录中查看邮件laragon>bin>sendmail>output
 >8.具体思路查看[docx](https://github.com/demonsheart/an-item-for-bookmark/blob/master/%E4%B9%A6%E7%AD%BE%E6%94%B6%E8%97%8F%E5%A4%B9.docx)
 
-###更新
+### 更新
 >将纯sha1()换成了laravel带的Crypt::encrypt()以及Crypt::decrypt()配合验证密码，提高了安全性。（2020/10/16）
