@@ -1,6 +1,6 @@
 ### 程序简介
 > 构建了一个书签收藏夹
-![picture](https://github.com/demonsheart/an-item-for-bookmark/blob/master/architecture.png?raw=true)
+>![picture](https://github.com/demonsheart/an-item-for-bookmark/blob/master/architecture.png?raw=true)
 ### 程序使用说明
 >1.	项目打包
 >2.	安装composer之后在项目根目录下使用composer install命令安装vendor目录
