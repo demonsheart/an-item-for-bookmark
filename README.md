@@ -13,4 +13,4 @@
 
 ### 更新
 >1. 将纯sha1()换成了laravel带的Crypt::encrypt()以及Crypt::decrypt()配合验证密码，提高了安全性。（2020/10/16）
->2. 搭建了远程服务器[test](ibookmark.xyz)
+>2. 搭建了远程服务器[test](https://ibookmark.xyz)
