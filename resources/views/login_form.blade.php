@@ -14,7 +14,7 @@
         <h2>Members Log In Here</h2>
 
         <p><label for="username">Username:</label><br />
-            <input type="text" name="username" id="username" required /></p>
+            <input type="text" name="username" id="username" required autofocus/></p>
 
         <p><label for="passwd">Password:</label><br />
             <input type="password" name="passwd" id="passwd" required /></p>

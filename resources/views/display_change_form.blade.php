@@ -13,7 +13,7 @@
     <h2>Change Password</h2>
 
     <p><label for="old_passwd">Old Password:</label><br />
-        <input type="password" name="old_passwd" id="old_passwd" size="20" maxlength="20" required /></p>
+        <input type="password" name="old_passwd" id="old_passwd" size="20" maxlength="20" required autofocus/></p>
 
     <p><label for="passwd2">New Password:</label><br />
         <input type="password" name="new_passwd" id="new_passwd" size="20" maxlength="20" required /></p>

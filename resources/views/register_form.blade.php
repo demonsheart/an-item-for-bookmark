@@ -13,7 +13,7 @@
         <h2>Register Now</h2>
 
         <p><label for="email">Email Address:</label><br />
-            <input type="email" name="email" id="email" size="30" maxlength="100" required /></p>
+            <input type="email" name="email" id="email" size="30" maxlength="100" required autofocus/></p>
 
         <p><label for="username">Preferred Username <br>(between 4 and 20 chars):</label><br />
             <input type="text" name="username" id="username" size="16" maxlength="16" required /></p>
