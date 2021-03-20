@@ -14,5 +14,8 @@
 ### 更新
 >1. 将纯sha1()换成了laravel带的Crypt::encrypt()以及Crypt::decrypt()配合验证密码，提高了安全性。
 
+### 在线测试
+> [书签收藏夹首页](http://ibookmark.xyz)
+
 ### 状态
 暂不维护
