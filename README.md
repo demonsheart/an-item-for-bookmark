@@ -13,5 +13,6 @@
 
 ### 更新
 >1. 将纯sha1()换成了laravel带的Crypt::encrypt()以及Crypt::decrypt()配合验证密码，提高了安全性。
->2. 搭建了远程服务器[bookmark](http://ibookmark.xyz)
->3. 启用了ssl,https资源加载问题待解决 链接: [test](https://ibookmark.xyz).
+
+### 状态
+暂不维护
